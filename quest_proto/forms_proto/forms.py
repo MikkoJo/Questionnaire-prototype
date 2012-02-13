@@ -1,4 +1,5 @@
 from django import forms
+from widgets import NumberInput
 
 from defs import default_values
 #from defs import definitions
@@ -29,7 +30,7 @@ class QuestForm(forms.Form):
             elif(field_type == 'text'):
                 self.fields[dyn_field['name']] = forms.CharField(widget=forms.TextInput(attrs=widget_args), **field_args)
             elif(field_type == 'number'):
-                self.fields[dyn_field['name']] = forms.IntegerField(widget=forms.TextInput(attrs=widget_args), **field_args)
+                self.fields[dyn_field['name']] = forms.IntegerField(widget=NumberInput(attrs=widget_args), **field_args)
             
             #self.fields[dyn_field['name']] = forms.CharField(**dyn_field['args'])
         

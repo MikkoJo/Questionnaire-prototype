@@ -25,12 +25,12 @@ definitions = [[
     'type': 'number',
     'args':{
         'max_value': 500,
-        'min_value': 5,
-#        'widget': { 'type':'forms.TextInput',
-#                    'class': 'number'
-#                }
+        'min_value': 5
+    },
+    'widget_args': {
+                    'class': 'short'                    
     }
-}
+    }
 ],
 [
 {
