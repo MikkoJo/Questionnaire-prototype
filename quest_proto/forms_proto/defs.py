@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 default_values = {'radio': {'required': False},
                   'text': {'required': False},
                   'number': {'required': False,
@@ -42,6 +43,22 @@ definitions = [[
     },
     'widget_args': {
                     'class': 'short'
+    }
+}
+],
+[
+{
+    'name': 'testi5',
+    'type': 'text',
+    'args': {
+             'max_length': 20
+             }
+},
+{
+    'name': 'testi6',
+    'type': 'radio',
+    'args': {
+         'choices': (('first', 'Eka'), ('second', 'Toka'),('third', 'Kolmas'), ('fourth', 'Neljäs'))
     }
 }
 ]

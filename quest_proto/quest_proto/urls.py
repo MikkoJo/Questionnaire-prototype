@@ -2,6 +2,14 @@ from django.conf.urls import patterns, include, url
 
 from forms_proto.forms import QuestForm
 from forms_proto.views import QuestionnaireWizard
+
+from forms_proto.defs import definitions
+
+wizard_forms = []
+
+for i in range(len(definitions)):
+    wizard_forms.append(QuestForm)
+    
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -11,7 +19,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'quest_proto.views.home', name='home'),
     # url(r'^quest_proto/', include('quest_proto.foo.urls')),
     
-    url(r'^form/$', QuestionnaireWizard.as_view([QuestForm, QuestForm]))
+    url(r'^form/$', QuestionnaireWizard.as_view(wizard_forms))
 
     #geonition urls
     #(r'^gclient/', include('geonition_client.urls')),
