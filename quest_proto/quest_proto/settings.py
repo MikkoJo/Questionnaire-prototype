@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'email_rest',
 
     'quest_proto',
+    'forms_proto',
 )
 
 # A sample logging configuration. The only tangible logging

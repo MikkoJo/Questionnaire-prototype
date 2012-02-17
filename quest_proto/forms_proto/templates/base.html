@@ -1,0 +1,36 @@
+{% load i18n %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+    <head>
+        <!--[if lt IE 9]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+        <meta charset="utf-8">
+
+        <title>
+            Form Proto
+        </title>
+    </head>
+    <body>
+        {% csrf_token %}
+        <div class="top">
+               <h1>This is Django FormWizard proto for dynamic ajax content</h1>
+                {% block head %}
+                {% endblock head %}
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="application/javascript" src="{% url api_javascript %}"></script>
+        <script type="application/javascript" src="{{ STATIC_URL }}javascript/proto.js"></script>
+        <script>
+            $(document).ready(function () {
+                softgis.proto.init();
+            });
+        </script>
+
+    </body>
+</html>
