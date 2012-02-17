@@ -19,12 +19,12 @@ class QuestForm(forms.Form):
             field_args = dict(default_values[field_type])
             if('args' in dyn_field):
                 field_args.update(dyn_field['args'])
-            print (field_args)
+            #print (field_args)
             #widget_args = dict(default_values[field_type])
             widget_args = dict()
             if('widget_args' in dyn_field):
                 widget_args.update(dyn_field['widget_args'])
-            print (widget_args)
+            #print (widget_args)
             if(field_type == 'radio'):
                 self.fields[dyn_field['name']] = forms.ChoiceField(widget=forms.RadioSelect(attrs=widget_args), **field_args)
             elif(field_type == 'text'):
