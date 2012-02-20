@@ -1,4 +1,3 @@
-{% extends "base.html" %}
 {% load i18n %}
 {% block head %}
 {{ wizard.form.media }}
@@ -6,7 +5,7 @@
 
 {% block content %}
 <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
-<form action="" method="post" name="questform">
+<form action="" method="post" name="questform">{% csrf_token %}
 <table>
 {{ wizard.management_form }}
 {% if wizard.form.forms %}
@@ -21,8 +20,8 @@
 {% if wizard.steps.prev %}
 <!--<button name="wizard_prev_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
 <button name="wizard_prev_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>-->
-<button name="wizard_prev_step" class="first_step" type="button" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
-<button name="wizard_prev_step" class="prev_step" type="button" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
+<button name="wizard_goto_step" class="first_step" type="button" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
+<button name="wizard_goto_step" class="prev_step" type="button" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
 {% endif %}
 <button type="button" class="submit">{% trans "Submit" %}</button>
 <!--<input type="submit" value="{% trans "submit" %}"/>-->

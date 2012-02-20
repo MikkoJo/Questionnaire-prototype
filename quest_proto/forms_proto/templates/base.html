@@ -28,7 +28,7 @@
         <script type="application/javascript" src="{{ STATIC_URL }}javascript/proto.js"></script>
         <script>
             $(document).ready(function () {
-                softgis.proto.init();
+                softgis.proto.init(softgis.proto.pageload_callback);
             });
         </script>
 

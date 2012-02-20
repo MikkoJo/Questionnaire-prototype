@@ -20,7 +20,9 @@ urlpatterns = patterns('',
     # url(r'^quest_proto/', include('quest_proto.foo.urls')),
     
     url(r'^form/$', QuestionnaireWizard.as_view(wizard_forms)),
-
+    url(r'^start', 
+        'forms_proto.views.start',
+        name='start'),
     #geonition urls
     (r'^gclient/', include('geonition_client.urls')),
     #(r'^guser/', include('auth.urls')),
