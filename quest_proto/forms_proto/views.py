@@ -18,7 +18,4 @@ class QuestionnaireWizard(SessionWizardView):
         })
         
     def get_form_kwargs(self, step):
-        #z = self.request.POST.get('wizard_goto_step', None)
-        #print ('Z: ' + `z`)
-        #print '0' in self.get_form_list()
         return {'definition': definitions[int(step)]}
